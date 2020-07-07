@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="rocket.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <title>Rocket Animation Effects</title>
+</head>
+<body>
+    
+    <div class="scene">
+        <div onclick="dv()" class="rocket">
+            <img src="rocket.png" alt="Fugete">
+        </div>
+    </div>
+    <script>
+        function dv(){
+            var text='Guilherme Sanches Simões';
+            document.write('<img style=" margin-left: 43%; width: 300px; border-radius: 50%;" src="https://avatars0.githubusercontent.com/u/62891985?s=460&u=0a10365bfb4c5ef1f5ac4e83a8caedb609f5c3aa&v=4">');
+            document.write('<a style="text-decoration:none; " href="https://github.com/GuilhermeSanchesS"><h1 style="font-family: Montserrat, sans-serif; color: #3b465e; text-align: center;">'+ '<p>Desnvolvedor</p>'+ text +'</h1></a>');
+        }
+
+        function stars(){
+            let count = 50;
+            let scene = document.querySelector('.scene');
+            let i = 0;
+            while(i < count){
+                let star = document.createElement('i');
+                let x = Math.floor(Math.random() * window.innerWidth);
+                
+                let duration = Math.random() * 1;
+                let h = Math.random() * 100;
+
+                star.style.left = x + 'px';
+                star.style.width = 1 + 'px';
+                star.style.height = 50 + h + 'px';
+                star.style.animationDuration = duration + 's';
+
+                scene.appendChild(star);
+                i++
+            }
+        }
+        stars();
+    </script>
+</body>
+</html>
